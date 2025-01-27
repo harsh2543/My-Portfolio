@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>HS - Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="navbar">
+                <div class="logo"><a href="#">My Portfolio</a></div>
+                <ul class="links">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown_menu">
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+    
+    <section id="about" class="section">
+        <div class="container">
+            <div class="name">
+                <h1>Harsh Sheth</h1>
+                <h4>Frontend Developer / Software Developer</h4>
+            </div>
+            <h2>About Me</h2>
+            <p>Hi, I'm Harsh Sheth, a web developer with a passion for creating engaging, responsive websites and applications. I specialize in modern web technologies to deliver user-friendly experiences.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Frontend Development</h3>
+                    <p>HTML, CSS, JavaScript, React.js</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Backend Development</h3>
+                    <p>Node.js, Python, PHP, MYSQL</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Design Tools</h3>
+                    <p>Git/Github, VSCode, Intellij IDEA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <img src="1216592_139280-OT8HQA-203.jpg" alt="Project 1">
+                    <div class="portfolio-content">
+                        <h3>Project 1</h3>
+                        <p>Responsive E-commerce website built with PHP and MYSQL.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="mobile-devices-2017981_1280.png" alt="Project 2">
+                    <div class="portfolio-content">
+                        <h3>Project 2</h3>
+                        <p>Portfolio built using React and Node.js.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="computer-display-with-globe-and-famous-world-sights-on-white-desk-concept-of-booking-and-planning-holiday-online-sky-and-clouds-in-background-W2F45G.jpg" alt="Project 3">
+                    <div class="portfolio-content">
+                        <h3>Project 3</h3>
+                        <p>Travelling Site using HTML, Css, Javascript.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <p>harshetsheth1@gmail.com</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Phone</h3>
+                    <p>+91 8734068727</p>
+                </div>
+                <div class="contact-card">
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/harsh-sheth-a61555333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">linkedin.com/in/harsh-sheth</a></p>
+                </div>
+            </div>
+            <form id="contactForm" method="POST" action="store_data.php">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Harsh Sheth. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Alert message upon form submission
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', (event) => {
+            alert("Thank you for your time!");
+        });
+    </script>
+
+    <script>
+        
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const dropdownMenu = document.querySelector('.dropdown_menu');
+    
+        
+        toggleBtn.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('open'); // Add/remove the 'open' class
+        });
+    
+        
+        dropdownMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                dropdownMenu.classList.remove('open'); // Close menu
+            });
+        });
+    
+        
+        window.addEventListener('click', (event) => {
+            if (!dropdownMenu.contains(event.target) && !toggleBtn.contains(event.target)) {
+                dropdownMenu.classList.remove('open');
+            }
+        });
+    </script>           
+</body>
+</html>
